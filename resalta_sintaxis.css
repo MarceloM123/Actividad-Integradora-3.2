@@ -1,0 +1,24 @@
+    .ide {
+        color: black;
+    }
+
+    .int {
+        color: greenyellow;
+    }
+
+    .flt {
+        color: green;
+    }
+
+    .par {
+        color: orange;
+    }
+
+    .end {
+        color: blue;
+    }
+
+    .str {
+        color: burlywood;
+    }
+    
