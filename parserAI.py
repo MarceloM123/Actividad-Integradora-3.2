@@ -25,12 +25,16 @@ final = '''
 import sys
 import obten_tokenAI as scanner
 
+# Escribe inicio de HTML al archivo
+html = open("parser.html", "a")
+html.write(inicio)
+
 # Empata y obtiene el siguiente token
 def match(tokenEsperado):
     global token
     print("TOKEN:", scanner.lexema)
+    createHTML(token, scanner.lexema)
     if token == tokenEsperado:
-        #scanner.lexema = ""
         token = scanner.obten_token()
     else:
         error("Token Equivocado")
@@ -98,8 +102,24 @@ def elementos():
 
 def error(mensaje):
     print("ERROR:", mensaje)
+    #html.write(final)
     sys.exit(1)
 
-# def createHTML(token, lexema):
-#     html = open("parser.html", "w")
-#     html.write(inicio)
+def createHTML(token, lexema):
+    #global html
+    if token == scanner.IDE:
+        html.write('<span class="ide">' + lexema + '</span>')
+    elif token == scanner.INT:
+        html.write('<span class="int">' + lexema + '</span>')
+    elif token == scanner.FLT:
+        html.write('<span class="flt">' + lexema + '</span>')
+    elif token == scanner.IZQ:
+        html.write('<span class="par">' + lexema + '</span>')
+    elif token == scanner.DER:
+        html.write('<span class="par">' + lexema + '</span>')
+    elif token == scanner.BOL:
+        html.write('<span class="bol">' + lexema + '</span>')
+    elif token == scanner.STR:
+        html.write('<span class="str">' + lexema + '</span>')
+    elif token == scanner.END:
+        html.write('<span class="end">' + lexema + '</span>')

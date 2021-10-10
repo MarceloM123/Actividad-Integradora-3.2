@@ -13,6 +13,9 @@ BOL = 106 # Booleanos
 END = 107 # Fin de la entrada
 ERR = 200 # Error léxico: palabra desconocida
 
+# Token especial para Espacios
+#ESP = 108
+
 #    num    (    )  esp    .    #    tf  ch    "  raro   $
 MT = [[1, IZQ, DER,   0,   7,   6,   4,   4,   5,   7, END],   # Edo 0 - edo inicial
       [1, INT, INT, INT,   2,   7,   7,   7,   7,   7, INT],   # Edo 1 - digitos entertos
@@ -36,6 +39,7 @@ def filtro(c):
     elif c == ')': # parentesis DER
         return 2
 
+        # espacio    tab            newline         
     elif c == ' ' or ord(c) == 9 or ord(c) == 10 or ord(c) == 13: # blancos
         return 3
 
