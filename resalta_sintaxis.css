@@ -1,24 +1,31 @@
-    .ide {
-        color: black;
-    }
+.ide {
+    color: royalblue;
+}
 
-    .int {
-        color: greenyellow;
-    }
+.int {
+    color: aqua;
+}
 
-    .flt {
-        color: green;
-    }
+.flt {
+    color: green;
+}
 
-    .par {
-        color: orange;
-    }
+.par {
+    color: navy;
+}
 
-    .end {
-        color: blue;
-    }
+.bol {
+    color: purple;
+}
 
-    .str {
-        color: burlywood;
-    }
+.str {
+    color: darkorange;
+}
     
+.end {
+    color: darkcyan;
+}
+
+.err {
+    color: red;
+}
